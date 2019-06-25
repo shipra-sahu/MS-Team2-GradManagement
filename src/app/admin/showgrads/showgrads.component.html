@@ -1,0 +1,40 @@
+<!-- <p>showgrads works!</p> -->
+<body>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h1>Graduates</h1>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let grad of grads | async">
+                        <td>{{grad.name}}</td>
+                        <td>{{grad.college}}</td>
+                        <td>{{grad.locPreference}}</td>
+                        <td>{{grad.doj}}</td>
+                        <td>{{grad.batch}}</td>
+                        <td>{{grad.doj_Reconfirmation}}</td>
+                        <td>{{grad.remarks}}</td>
+                        <td>{{grad.course}}</td>
+                        <td>{{grad.branch}}</td>
+                        <td>{{grad.currentPercent}}</td>
+                        <td>{{grad.personContact}}</td>
+                        <td>{{grad.emailId}}</td>
+                        <td>{{grad.dob}}</td>
+                        <td>{{grad.nativepPlace}}</td>
+                        <td>{{grad.currentPlace}}</td>
+                        <td>{{grad.parentContact}}</td>
+                        <td>{{grad.postalAddress}}</td>
+                        <td>{{grad.active}}</td>
+                        <td><button (click)="deleteGrad(grad.emailId)">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
