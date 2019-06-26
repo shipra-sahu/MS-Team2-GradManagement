@@ -36,10 +36,20 @@
         <!-- Form -->
         <form (ngSubmit)="onSubmit()" class="text-center" style="color: #757575;">
 
+            <div class="md-form mt-3">
+                <input placeholder="Employee Code" type="text" class="form-control" id="employeeCode" required ngModel="grad.employeeCode"
+                    name="employeeCode">
+            </div>
+
             <!-- Name -->
             <div class="md-form mt-3">
                 <input placeholder="Name" type="text" class="form-control" id="Name" required ngModel="grad.name"
                     name="Name">
+            </div>
+
+            <div class="md-form mt-3">
+                <input placeholder="Email" type="text" class="form-control" id="Name" required ngModel="grad.email"
+                    name="email">
             </div>
             <!-- College -->
             <div class="md-form mt-3">
@@ -49,12 +59,12 @@
             <!-- Location Prefernece -->
             <div class="md-form mt-3">
                 <input placeholder="Location Preference" type="text" class="form-control" id="locpreference" required
-                    ngModel="grad.locpreference" name="locpreference">
+                    ngModel="grad.location" name="locpreference">
             </div>
             <!-- Date of Joining -->
             <div class="md-form mt-3">
                 <input placeholder="Date of Joining" type="date" class="form-control" id="doj" required
-                    ngModel="grad.doj" name="doj">
+                    ngModel="grad.joiningDate" name="doj">
             </div>
             <!-- Batch -->
             <div class="md-form mt-3">
@@ -64,8 +74,14 @@
             <!-- Date of Joining(Reconfirmation -Y/N) -->
             <div class="md-form mt-3">
                 <input placeholder="Date of Joining(Reconfirmation-Y/N)" type="text" class="form-control" id="dojR"
-                    required ngModel="grad.doj_Reconfirmation" name="dojR">
+                    required ngModel="grad.dateOfJoiningReconfirmation" name="dojR">
             </div>
+
+            <div class="md-form mt-3">
+                <input placeholder="Remarks" type="text" class="form-control" id="remarks" ngModel="grad.remarks"
+                    name="remarks">
+            </div>
+
             <!-- Course -->
             <div class="md-form mt-3">
                 <input placeholder="Course" type="text" class="form-control" id="course" required ngModel="grad.course"
@@ -79,16 +95,16 @@
             <!-- Current % -->
             <div class="md-form mt-3">
                 <input placeholder="Current %" type="number" class="form-control" id="currentPercent" required
-                    ngModel="grad.currentPercent" name="currentPercent">
+                    ngModel="grad.cgpa" name="currentPercent">
             </div>
             <!-- Personal Contact Number -->
             <div class="md-form mt-3">
                 <input placeholder="Personal Contact Number" type="number" class="form-control" id="personContact"
-                    required ngModel="grad.personContact" name="personContact">
+                    required ngModel="grad.personalNumber" name="personContact">
             </div>
             <!-- Email Id -->
             <div class="md-form mt-3">
-                <input placeholder="Email" type="email" class="form-control" id="email" required ngModel="grad.emailId"
+                <input placeholder="Email" type="email" class="form-control" id="email" required ngModel="grad.personalEmail"
                     name="email">
             </div>
             <!-- Date of Birth -->
@@ -115,9 +131,13 @@
             <!-- Parent's Postal Address -->
             <div class="md-form mt-3">
                 <input placeholder="Parent's Postal Address" type="text" class="form-control" id="postalAddress"
-                    required ngModel="grad.postalAddress" name="postalAddress">
+                    required ngModel="grad.parentAddress" name="postalAddress">
             </div>
 
+            <div class="md-form mt-3">
+                <input placeholder="CV Link" type="text" class="form-control" id="cvLink" required ngModel="grad.cvLink"
+                    name="cvLink">
+            </div>
 
             <button type="submit" class="btn btn-success">Submit</button>
         </form>
