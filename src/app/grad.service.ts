@@ -28,7 +28,7 @@ export class GradService {
     return this.http.delete(`${this.baseUrl}/${emailId}`, { responseType: 'text' });
   }
 
-  getEmployeesList(): Observable<any> {
+  getGradsList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);
   }
 }

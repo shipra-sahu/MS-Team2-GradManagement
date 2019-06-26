@@ -1,20 +1,22 @@
 export class Grad {
+    employeeCode: string;
     name: string;
+    email: string;
     college: string;
-    locPreference : string;
-    doj : Date;
+    location : string;
+    joiningDate : Date;
     batch : string;
-    doj_Reconfirmation :boolean;
+    dateOfJoiningReconfirmation :string;
     remarks :string;
     course : string;
     branch : string;
-    currentPercent :number;
-    personContact : number;
-    emailId: string;
+    cgpa :number;
+    personalNumber : number;
+    personalEmail: string;
     dob :Date;
-    nativepPlace : string;
+    nativePlace : string;
     currentPlace :string;
     parentContact:number;
-    postalAddress : string;
-    active: boolean;
+    parentAddress : string;
+    cvLink: string;
 }
