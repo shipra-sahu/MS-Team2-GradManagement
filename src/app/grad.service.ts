@@ -15,20 +15,20 @@ export class GradService {
 
   constructor(private http: HttpClient) { }
 
-  getGrad(email: string): Observable<Object> {
-    return this.http.get(`${this.baseUrl}/${email}`);
+  getGrad(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${id}`);
   }
 
   createGrad(grad: Grad): Observable<Object> {
     return this.http.post(`${this.baseUrl}`, grad);
   }
 
-  updateGrad(emailId: string, value: any): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/${emailId}`, value);
+  updateGrad(id: number, value: any): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/${id}`, value);
   }
 
-  deleteGrad(email: string): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${email}`, { responseType: 'text' });
+  deleteGrad(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
   }
 
   getGradsList(): Observable<Grad[]> {
