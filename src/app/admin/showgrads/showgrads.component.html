@@ -14,8 +14,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let g of grads | async" scope="row">
-                        <td><a [routerLink]="['./',g.employeeCode]">{{g.employeeCode}}</a></td>
+                    <tr *ngFor="let g of grads" scope="row">
+                        <td><a [routerLink]="['/grads',g.id]">{{g.employeeCode}}</a></td>
                         <td>{{g.name}}</td>
                         <td>{{g.email}}</td>
                         <td>{{g.college}}</td>
@@ -35,7 +35,7 @@
                         <td>{{g.parentContact}}</td>
                         <td>{{g.postalAddress}}</td>
                         <td>{{g.cvLink}}</td>
-                        <td><button (click)="deleteg(g.email)">Delete</button></td>
+                        <td><button (click)="deleteGrad(g.id)">Delete</button></td>
                     </tr>
                 </tbody>
             </table>

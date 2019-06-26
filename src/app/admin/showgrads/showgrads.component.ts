@@ -26,8 +26,8 @@ export class ShowgradsComponent implements OnInit {
       .subscribe(data => this.grads = data._embedded.gradList);
   }
 
-  deleteGrad(email: string) {
-    this.gradService.deleteGrad(email)
+  deleteGrad(id: number) {
+    this.gradService.deleteGrad(id)
       .subscribe(
         data => {
           console.log(data);

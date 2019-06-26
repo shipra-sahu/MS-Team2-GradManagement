@@ -31,7 +31,7 @@ export class GradService {
     return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
   }
 
-  getGradsList(): Observable<Grad[]> {
-    return this.http.get<Grad[]>(`${this.baseUrl}`);
+  getGradsList(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}`);
   }
 }
