@@ -1,7 +1,10 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { Grad } from './gradmanagement/Grad'; 
+import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +19,7 @@ export class GradService {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
-  createGrad(grad: Object): Observable<Object> {
+  createGrad(grad: Grad): Observable<Object> {
     return this.http.post(`${this.baseUrl}`, grad);
   }
 
@@ -29,6 +32,6 @@ export class GradService {
   }
 
   getGradsList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
+    return this.http.get<any>(`${this.baseUrl}`);
   }
 }

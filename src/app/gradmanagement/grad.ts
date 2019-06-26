@@ -1,4 +1,5 @@
 export class Grad {
+    id: number;
     employeeCode: string;
     name: string;
     email: string;
