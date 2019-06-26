@@ -1,6 +1,4 @@
 import { Observable } from "rxjs";
-
-
 import { Component, OnInit } from "@angular/core";
 import { Grad } from 'src/app/gradmanagement/Grad';
 import { GradService } from 'src/app/grad.service';
@@ -27,8 +25,8 @@ export class ShowgradsComponent implements OnInit {
     this.grads = this.gradService.getGradsList();
   }
 
-  deleteGrad(emailId: string) {
-    this.gradService.deleteGrad(emailId)
+  deleteGrad(email: string) {
+    this.gradService.deleteGrad(email)
       .subscribe(
         data => {
           console.log(data);

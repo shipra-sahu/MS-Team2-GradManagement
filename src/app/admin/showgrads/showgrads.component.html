@@ -14,28 +14,28 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let grad of grads | async" scope="row">
-                        <td>{{grad.employeeCode}}</td>
-                        <td>{{grad.name}}</td>
-                        <td>{{grad.email}}</td>
-                        <td>{{grad.college}}</td>
-                        <td>{{grad.location}}</td>
-                        <td>{{grad.joiningDate}}</td>
-                        <td>{{grad.batch}}</td>
-                        <td>{{grad.dateOfJoiningReconfirmation}}</td>
-                        <td>{{grad.remarks}}</td>
-                        <td>{{grad.course}}</td>
-                        <td>{{grad.branch}}</td>
-                        <td>{{grad.cgpa}}</td>
-                        <td>{{grad.personalNumber}}</td>
-                        <td>{{grad.personalEmail}}</td>
-                        <td>{{grad.dob}}</td>
-                        <td>{{grad.nativepPlace}}</td>
-                        <td>{{grad.currentPlace}}</td>
-                        <td>{{grad.parentContact}}</td>
-                        <td>{{grad.postalAddress}}</td>
-                        <td>{{grad.cvLink}}</td>
-                        <td><button (click)="deleteGrad(grad.email)">Delete</button></td>
+                    <tr *ngFor="let g of grads | async" scope="row">
+                        <td><a [routerLink]="['./',g.employeeCode]">{{g.employeeCode}}</a></td>
+                        <td>{{g.name}}</td>
+                        <td>{{g.email}}</td>
+                        <td>{{g.college}}</td>
+                        <td>{{g.location}}</td>
+                        <td>{{g.joiningDate}}</td>
+                        <td>{{g.batch}}</td>
+                        <td>{{g.dateOfJoiningReconfirmation}}</td>
+                        <td>{{g.remarks}}</td>
+                        <td>{{g.course}}</td>
+                        <td>{{g.branch}}</td>
+                        <td>{{g.cgpa}}</td>
+                        <td>{{g.personalNumber}}</td>
+                        <td>{{g.personalEmail}}</td>
+                        <td>{{g.dob}}</td>
+                        <td>{{g.nativepPlace}}</td>
+                        <td>{{g.currentPlace}}</td>
+                        <td>{{g.parentContact}}</td>
+                        <td>{{g.postalAddress}}</td>
+                        <td>{{g.cvLink}}</td>
+                        <td><button (click)="deleteg(g.email)">Delete</button></td>
                     </tr>
                 </tbody>
             </table>
