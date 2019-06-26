@@ -12,8 +12,8 @@ export class GradService {
 
   constructor(private http: HttpClient) { }
 
-  getGrad(emailId: string): Observable<Object> {
-    return this.http.get(`${this.baseUrl}/${emailId}`);
+  getGrad(email: string): Observable<Object> {
+    return this.http.get(`${this.baseUrl}/${email}`);
   }
 
   createGrad(grad: Object): Observable<Object> {
@@ -24,8 +24,8 @@ export class GradService {
     return this.http.put(`${this.baseUrl}/${emailId}`, value);
   }
 
-  deleteGrad(emailId: string): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${emailId}`, { responseType: 'text' });
+  deleteGrad(email: string): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${email}`, { responseType: 'text' });
   }
 
   getGradsList(): Observable<any> {

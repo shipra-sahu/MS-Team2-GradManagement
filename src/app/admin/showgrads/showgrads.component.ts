@@ -12,10 +12,10 @@ import { GradService } from 'src/app/grad.service';
 })
 export class ShowgradsComponent implements OnInit {
   grads: Observable<Grad[]>;
-  headElements=['Name','College', 'Location Preference', 'DoJ', 'Batch','DoJ Reconfirmation(Y/N)',
-  'Remarks', 'Course','Branch','Current Percentage', 'Person Contact', 'Email Id',
-  'DoB', 'Native Place', 'Current Place', 'Parent Contact', 'Postal Address',
-  'Active'];
+  headElements=['Employee Code','Name','Email','College', 'Location ', 'DoJ', 'Batch','DoJ Reconfirmation(Y/N)',
+  'Remarks', 'Course','Branch','Current Percentage/CGPA', 'Personal Contact', 'Personal Email',
+  'DoB', 'Native Place', 'Current Place', 'Parent Contact', 'Postal Address', 'CV Link',
+  'Action'];
 
   constructor(private gradService: GradService) {}
 
