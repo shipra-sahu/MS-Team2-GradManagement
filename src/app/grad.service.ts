@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class GradService {
 
-  private baseUrl = '/api/v1/employees';
+  private baseUrl = 'http://localhost:8080/grads';
 
   constructor(private http: HttpClient) { }
 

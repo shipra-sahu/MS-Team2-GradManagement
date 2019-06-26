@@ -5,15 +5,14 @@ import { AddEditComponent } from './gradmanagement/add-edit/add-edit.component';
 
 const routes: Routes = [
   {
-    path : 'add-edit',
+    path : 'grads',
     loadChildren: () => import('./gradmanagement/gradmanagement.module').then(mod => mod.GradmanagementModule),
   },
-  
-// {
-//     path: '',
-//     redirectTo: 'add-edit',
-//     pathMatch: 'full'
-//   },
+  {
+    path : 'admin',
+    loadChildren: () => import('./Admin/Admin.module').then(mod => mod.AdminModule),
+  },
+
 ];
 
 @NgModule({
