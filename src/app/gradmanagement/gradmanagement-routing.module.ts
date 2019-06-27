@@ -10,7 +10,7 @@ const routes: Routes = [
     component: AddEditComponent
   },
   {
-    path:'view/:id',
+    path:'fill/:id',
     component: AddEditComponent
   },
   {

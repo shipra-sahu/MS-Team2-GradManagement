@@ -37,6 +37,6 @@ export class GradDetailsComponent implements OnInit {
       };
       this.gradId = this.graduate.id;
       this.graduate = null;
-      this.router.navigate(["/grads/view", this.gradId], navigationExtras);
+      this.router.navigate(["/grads/fill", this.gradId], navigationExtras);
     }
   }
