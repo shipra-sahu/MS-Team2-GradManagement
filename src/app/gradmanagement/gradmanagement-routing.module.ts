@@ -6,13 +6,13 @@ import { GradDetailsComponent } from './grad-details/grad-details.component';
 
 const routes: Routes = [
   {
-    path:'view',
+    path:'fill',
     component: AddEditComponent
   },
   {
     path:':id',
     component: GradDetailsComponent
-  }
+  },
 ];
 
 @NgModule({
