@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 })
 export class GradService {
 
-  private baseUrl = 'http://localhost:8080/grads';
+  private baseUrl = 'http://10.4.14.56:8080/grads';
 
   constructor(private http: HttpClient) { }
 
