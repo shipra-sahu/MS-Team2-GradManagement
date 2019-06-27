@@ -6,6 +6,8 @@
             <h1>Graduates</h1>
         </div>
 
+        <input type="text" id="searchTextId" [(ngModel)]="searchText" name="searchText" placeholder="Search By Name">
+
         <div class="panel-body" >
             <table class="table table-striped table-bordered">
                 <thead class="thead-dark">
@@ -14,7 +16,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let g of grads" scope="row">
+                    <tr *ngFor="let g of (grads | searchByName: searchText)" scope="row">
                         <td><a [routerLink]="['/grads',g.id]">{{g.employeeCode}}</a></td>
                         <td>{{g.name}}</td>
                         <td>{{g.email}}</td>

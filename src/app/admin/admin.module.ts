@@ -3,12 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { ShowgradsComponent } from './showgrads/showgrads.component';
+import { SearchByNamePipe } from './showgrads/search-by-name.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [ShowgradsComponent],
+  declarations: [ShowgradsComponent, SearchByNamePipe],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule
   ]
 })
 export class AdminModule { }

@@ -15,6 +15,7 @@ export class ShowgradsComponent implements OnInit {
   "Remarks", "Course","Branch","Current Percentage/CGPA", "Personal Contact", "Personal Email",
   "DoB", "Native Place", "Current Place", "Parent Contact", "Postal Address", "CV Link",
   "Action"];
+  searchText = '';
 
   constructor(private gradService: GradService) {}
 
