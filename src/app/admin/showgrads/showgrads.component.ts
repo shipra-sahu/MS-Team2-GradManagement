@@ -2,6 +2,7 @@ import { Observable } from "rxjs";
 import { Component, OnInit } from "@angular/core";
 import { Grad } from 'src/app/gradmanagement/Grad';
 import { GradService } from 'src/app/grad.service';
+import { NavigationExtras } from '@angular/router';
 
 @Component({
   selector: "app-showgrads",
