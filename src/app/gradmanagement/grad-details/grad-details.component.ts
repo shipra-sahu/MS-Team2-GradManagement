@@ -4,8 +4,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { GradService } from 'src/app/grad.service';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-grad-details',
   templateUrl: './grad-details.component.html',
