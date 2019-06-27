@@ -10,6 +10,10 @@ const routes: Routes = [
     component: AddEditComponent
   },
   {
+    path:'view/:id',
+    component: AddEditComponent
+  },
+  {
     path:':id',
     component: GradDetailsComponent
   }

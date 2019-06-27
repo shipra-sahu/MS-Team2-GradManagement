@@ -19,12 +19,12 @@ export class GradService {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
-  createGrad(grad: Grad): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, grad);
+  createGrad(grad: Grad): Observable<Grad> {
+    return this.http.post<Grad>(`${this.baseUrl}`, grad);
   }
 
-  updateGrad(id: number, value: any): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/${id}`, value);
+  updateGrad(id: number, value: Grad): Observable<Grad> {
+    return this.http.put<Grad>(`${this.baseUrl}/${id}`, value);
   }
 
   deleteGrad(id: number): Observable<any> {

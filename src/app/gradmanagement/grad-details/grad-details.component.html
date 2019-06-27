@@ -53,7 +53,7 @@
             <label>Parent Postal Address: </label> {{graduate.parentAddress}}
         </div>
         
-    
+        <button (click)="updateGrad(graduate.id)">Edit</button>
         <!-- <span class="button is-small btn-primary" *ngIf='graduate.active' (click)='updateActive(false)'>Inactive</span>
     
         <span class="button is-small btn-primary" *ngIf='!employee.active' (click)='updateActive(true)'>Active</span>
