@@ -1,33 +1,3 @@
-// import { Component, OnInit } from '@angular/core';
-// import { FormGroup, FormControl,  FormBuilder  } from "@angular/forms";
-
-// @Component({
-//   selector: 'app-add-edit',
-//   templateUrl: './add-edit.component.html',
-//   styleUrls: ['./add-edit.component.scss']
-// })
-// export class AddEditComponent implements OnInit {
-
-//   exampleForm = new FormGroup ({
-//     firstName: new FormControl(),
-//     lastName: new FormControl(),
-
-//   });
-//   createForm() {
-//     this.exampleForm = this.formBuilder.group({
-//       firstName: '',
-//       lastName: ''
-//     });
-// }
-//   constructor(private formBuilder: FormBuilder) { 
-//     this.createForm();
-//   }
-//   ngOnInit() {
-//   }
-
-// }
-
-
 import { Component, OnInit } from '@angular/core';
 import { GradService } from 'src/app/grad.service';
 import { Grad } from '../Grad';
