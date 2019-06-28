@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { GradService } from './grad.service';
-
 
 @NgModule({
   declarations: [
@@ -17,6 +17,7 @@ import { GradService } from './grad.service';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
 
   providers: [GradService],
