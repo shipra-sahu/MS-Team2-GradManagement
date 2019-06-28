@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Grad } from './gradmanagement/Grad'; 
-import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -11,7 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class GradService {
 
-  private baseUrl = 'http://10.4.14.56:8080/grads';
+  private baseUrl = 'http://10.4.14.126:8080/grads';
 
   constructor(private http: HttpClient) { }
 

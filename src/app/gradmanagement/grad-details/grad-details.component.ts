@@ -1,6 +1,5 @@
-import { Observable } from 'rxjs';
 import { Grad } from '../Grad';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { GradService } from 'src/app/grad.service';
 import { ActivatedRoute, Router, ParamMap, NavigationExtras } from '@angular/router';
 

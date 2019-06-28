@@ -1,8 +1,8 @@
-import { Observable } from "rxjs";
 import { Component, OnInit } from "@angular/core";
 import { Grad } from 'src/app/gradmanagement/Grad';
 import { GradService } from 'src/app/grad.service';
-import { NavigationExtras } from '@angular/router';
+import { MatDialog } from '@angular/material';
+import { ConfirmationDialogComponent } from 'src/app/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: "app-showgrads",
@@ -11,12 +11,13 @@ import { NavigationExtras } from '@angular/router';
 })
 export class ShowgradsComponent implements OnInit {
   grads: Grad[];
-  headElements=["Employee Code","Name","Email","College", "Location ", "DoJ", "Batch","DoJ Reconfirmation(Y/N)",
-  "Remarks", "Course","Branch","Current Percentage/CGPA", "Personal Contact", "Personal Email",
-  "DoB", "Native Place", "Current Place", "Parent Contact", "Postal Address", "CV Link",
-  "Action"];
+  headElements = ["Employee Code", "Name", "Email", "College", "Location ", "DoJ", "Batch", "DoJ Reconfirmation(Y/N)",
+    "Remarks", "Course", "Branch", "Current Percentage/CGPA", "Personal Contact", "Personal Email",
+    "DoB", "Native Place", "Current Place", "Parent Contact", "Postal Address", "CV Link",
+    "Action"];
+  title = 'angular-confirmation-dialog';
 
-  constructor(private gradService: GradService) {}
+  constructor(private gradService: GradService,public dialog: MatDialog) { }
 
   ngOnInit() {
     this.reloadData();
@@ -28,12 +29,25 @@ export class ShowgradsComponent implements OnInit {
   }
 
   deleteGrad(id: number) {
-    this.gradService.deleteGrad(id)
-      .subscribe(
-        data => {
-          console.log(data);
-          this.reloadData();
-        },
-        error => console.log(error));
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      width: '390px',
+      disableClose: true,
+      data: "Do you really want to delete... ?"
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log('Yes clicked');
+        this.gradService.deleteGrad(id)
+          .subscribe(
+            data => {
+              console.log(data);
+              this.reloadData();
+            },
+            error => console.log(error));
+      }
+    });
+
   }
 }
+
+
