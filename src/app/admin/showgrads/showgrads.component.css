@@ -1,7 +1,7 @@
 body{
     background-color: rgb(230, 234, 240);
     font-family: 'Times New Roman', Times, serif;
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 .tableFixHead          { overflow-y: auto; height: 450px; }
 .tableFixHead thead th { position: sticky; top: 0; }
@@ -9,3 +9,12 @@ body{
 table  { border-collapse: collapse; width: 100%; }
 th, td { padding: 8px 16px; }
 th     { background:#eee; }
+
+#searchTextId {
+    width: 15%;
+    padding: 6px 6px;
+    margin: 8px 5px;
+    box-sizing:border-box;
+    border: 4px ;
+    border-radius: 5px; 
+}
