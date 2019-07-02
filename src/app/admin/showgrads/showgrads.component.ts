@@ -12,13 +12,8 @@ import {Sort} from '@angular/material/sort';
   styleUrls: ["./showgrads.component.css"]
 })
 export class ShowgradsComponent implements OnInit {
-  grads: Grad[];
-  title = 'angular-confirmation-dialog';
 
   constructor(private gradService: GradService,public dialog: MatDialog) { }
-  rowData: Grad[];
- 
-  
 
   // columnDefs = [
   //   {headerName: "Employee Code", field: "employeeCode", sortable:true, filter:true},
@@ -43,10 +38,9 @@ export class ShowgradsComponent implements OnInit {
   //   {headerName: "CV", field: "cvLink"},
   // ]
 
-  searchText = '';
-
-
-
+  // searchText = '';
+  nameSearch = '';
+  empCodeSearch ='';
   sortedGrads: Grad[];
 
   ngOnInit() {
@@ -92,7 +86,7 @@ export class ShowgradsComponent implements OnInit {
     this.sortedGrads = data.sort((a, b) => {
       const isAsc = sort.direction === 'asc';
       switch (sort.active) {
-        case 'Employee Code': return compare(a.employeeCode, b.employeeCode, isAsc);
+        case 'Employee Code': return compareEmp(a.employeeCode, b.employeeCode, isAsc);
         case 'Name': return compare(a.name, b.name, isAsc);
         case 'College': return compare(a.college, b.college, isAsc);
         case 'Location': return compare(a.location, b.location, isAsc);
@@ -111,4 +105,9 @@ function compare(a: number | string | Date, b: number | string | Date, isAsc: bo
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
 
+function compareEmp(a:string, b:string, isAsc: boolean) {
+  var emp1 = parseInt(a);
+  var emp2 = parseInt(b);
+  return (emp1 - emp2) * (isAsc ? 1 : -1);
+}
 
