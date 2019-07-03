@@ -1,5 +1,6 @@
-.card{
-    font-family: 'Times New Roman', Times, serif;
+.card-body{
+    margin: 15%;
+    margin-top: 1%;
     text-align: left;   
 }
 
