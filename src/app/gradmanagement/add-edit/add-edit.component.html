@@ -1,4 +1,3 @@
-
 <div class="card">
     <h3 class="card-header info-color white-text text-center py-4" style="background-color: rgb(230, 234, 240);">
         <strong>Add/Edit Grad</strong>
@@ -7,58 +6,60 @@
     <!--Card content-->
 
     <div class="card-body px-lg-5">
-
+        <div class="alert alert-primary" role="alert">
+            Fields marked with * are compulsory
+        </div>
         <!-- Form -->
-        <form (ngSubmit)="onSubmit()">
+        <form (ngSubmit)="onSubmit()" ngNativeValidate>
 
             <!-- Employee Code -->
             <div class="form-group row">
-                <label for="employeeCode" class="col-sm-2 col-form-label">Employee Code</label>
+                <label for="employeeCode" class="col-sm-2 col-form-label">Employee Code*</label>
                 <div class="col-sm-10">
                     <input placeholder="Employee Code" type="text" class="form-control" id="employeeCode"
-                        ngNativeValidate [(ngModel)]="grad.employeeCode" name="employeeCode" [readonly]="!adminRole"/>
+                        [(ngModel)]="grad.employeeCode" name="employeeCode" [readonly]="!adminRole" required />
                 </div>
             </div>
 
             <!-- Name -->
             <div class="form-group row">
-                <label for="Name" class="col-sm-2 col-form-label">Name</label>
+                <label for="Name" class="col-sm-2 col-form-label">Name*</label>
                 <div class="col-sm-10">
-                    <input placeholder="Name" type="text" class="form-control" id="Name" ngNativeValidate
-                        [(ngModel)]="grad.name" name="Name" [readonly]="!adminRole&&!gradRole"/>
+                    <input placeholder="Name" type="text" class="form-control" id="Name" [(ngModel)]="grad.name"
+                        name="Name" [readonly]="!adminRole&&!gradRole" required />
                 </div>
             </div>
 
             <!-- Email Id -->
             <div class="form-group row">
-                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <label for="email" class="col-sm-2 col-form-label">Email*</label>
                 <div class="col-sm-10">
-                    <input placeholder="Email" type="email" class="form-control" id="email" ngNativeValidate
-                        [(ngModel)]="grad.email" name="email" [readonly]="!adminRole&&!gradRole" />
+                    <input placeholder="Email" type="email" class="form-control" id="email" [(ngModel)]="grad.email"
+                        name="email" [readonly]="!adminRole&&!gradRole" required />
                 </div>
             </div>
             <!-- College -->
             <div class="form-group row">
-                <label for="college" class="col-sm-2 col-form-label">College</label>
+                <label for="college" class="col-sm-2 col-form-label">College*</label>
                 <div class="col-sm-10">
-                    <input placeholder="College" type="text" class="form-control" id="college" ngNativeValidate
-                        [(ngModel)]="grad.college" name="college" [readonly]="!adminRole&&!gradRole"/>
+                    <input placeholder="College" type="text" class="form-control" id="college"
+                        [(ngModel)]="grad.college" name="college" [readonly]="!adminRole&&!gradRole" required />
                 </div>
             </div>
             <!-- Location Prefernece -->
             <div class="form-group row">
-                <label for="locpreference" class="col-sm-2 col-form-label">Location Preference</label>
+                <label for="locpreference" class="col-sm-2 col-form-label">Location Preference*</label>
                 <div class="col-sm-10">
                     <input placeholder="Location Preference" type="text" class="form-control" id="locpreference"
-                        ngNativeValidate [(ngModel)]="grad.location" name="locpreference" [readonly]="!adminRole&&!gradRole"/>
+                        [(ngModel)]="grad.location" name="locpreference" [readonly]="!adminRole&&!gradRole" required />
                 </div>
             </div>
             <!-- Date of Joining -->
             <div class="form-group row">
                 <label for="doj" class="col-sm-2 col-form-label">Date of Joining</label>
                 <div class="col-sm-10">
-                    <input placeholder="Date of Joining" type="date" class="form-control" id="doj" ngNativeValidate
-                        [(ngModel)]="grad.joiningDate" name="doj" [readonly]="!adminRole&&!gradRole"/>
+                    <input placeholder="Date of Joining" type="date" class="form-control" id="doj"
+                        [(ngModel)]="grad.joiningDate" name="doj" [readonly]="!adminRole&&!gradRole" />
                 </div>
             </div>
             <!-- Batch -->
@@ -71,58 +72,61 @@
             </div>
             <!-- Date of Joining(Reconfirmation -Y/N) -->
             <div class="form-group row">
-                <label for="dojR" class="col-sm-2 col-form-label">DOJ(Reconfirmation-Y/N)</label>
+                <label for="dojR" class="col-sm-2 col-form-label">DOJ(Reconfirmation-Y/N)*</label>
                 <div class="col-sm-10">
                     <input placeholder="Date of Joining(Reconfirmation-Y/N)" type="text" class="form-control" id="dojR"
-                        [(ngModel)]="grad.dateOfJoiningReconfirmation" name="dojR" [readonly]="!adminRole&&!gradRole"/>
+                        [(ngModel)]="grad.dateOfJoiningReconfirmation" name="dojR" [readonly]="!adminRole&&!gradRole"
+                        required />
                 </div>
             </div>
             <!-- Course -->
             <div class="form-group row">
-                <label for="course" class="col-sm-2 col-form-label">Course</label>
+                <label for="course" class="col-sm-2 col-form-label">Course*</label>
                 <div class="col-sm-10">
-                    <input placeholder="Course" type="text" class="form-control" id="course" ngNativeValidate
-                        [(ngModel)]="grad.course" name="course"[readonly]="!adminRole&&!gradRole" />
+                    <input placeholder="Course" type="text" class="form-control" id="course" [(ngModel)]="grad.course"
+                        name="course" [readonly]="!adminRole&&!gradRole" required />
                 </div>
             </div>
             <!-- Branch -->
             <div class="form-group row">
-                <label for="branch" class="col-sm-2 col-form-label">Branch</label>
+                <label for="branch" class="col-sm-2 col-form-label">Branch*</label>
                 <div class="col-sm-10">
-                    <input placeholder="Branch" type="text" class="form-control" id="branch" ngNativeValidate
-                        [(ngModel)]="grad.branch" name="branch" [readonly]="!adminRole&&!gradRole"/>
+                    <input placeholder="Branch" type="text" class="form-control" id="branch" [(ngModel)]="grad.branch"
+                        name="branch" [readonly]="!adminRole&&!gradRole" required />
                 </div>
             </div>
-            <!-- Current % -->
+            <!-- Current % or CGPA-->
             <div class="form-group row">
-                <label for="currentPercent" class="col-sm-2 col-form-label">Current % or CGPA</label>
+                <label for="currentPercent" class="col-sm-2 col-form-label">Current % or CGPA*</label>
                 <div class="col-sm-10">
                     <input placeholder="Current % or CGPA" type="number" class="form-control" id="currentPercent"
-                        ngNativeValidate [(ngModel)]="grad.cgpa" name="currentPercent" [readonly]="!adminRole&&!gradRole" />
+                        [(ngModel)]="grad.cgpa" name="currentPercent" [readonly]="!adminRole&&!gradRole" required
+                        step="0.01" min="0" max="10" />
                 </div>
             </div>
             <!-- Personal Contact Number -->
             <div class="form-group row">
-                <label for="personContact" class="col-sm-2 col-form-label">Personal Contact Number</label>
+                <label for="personContact" class="col-sm-2 col-form-label">Personal Contact Number*</label>
                 <div class="col-sm-10">
-                    <input placeholder="Personal Contact Number" type="number" class="form-control" id="personContact"
-                        ngNativeValidate [(ngModel)]="grad.personalNumber" name="personContact" [readonly]="!adminRole&&!gradRole"/>
+                    <input placeholder="Personal Contact Number" type="tel" pattern="[0-9]{10}" minlength="10"
+                        maxlength="10" class="form-control" id="personContact" [(ngModel)]="grad.personalNumber"
+                        name="personContact" [readonly]="!adminRole&&!gradRole" required />
                 </div>
             </div>
             <!-- Personal Email Id -->
             <div class="form-group row">
-                <label for="personalemail" class="col-sm-2 col-form-label">Personal Email</label>
+                <label for="personalemail" class="col-sm-2 col-form-label">Personal Email*</label>
                 <div class="col-sm-10">
                     <input placeholder="Personal Email" type="email" class="form-control" id="personalemail"
-                        ngNativeValidate [(ngModel)]="grad.personalEmail" name="email" [readonly]="!adminRole&&!gradRole"/>
+                        [(ngModel)]="grad.personalEmail" name="email" [readonly]="!adminRole&&!gradRole" required />
                 </div>
             </div>
             <!-- Date of Birth -->
             <div class="form-group row">
-                <label for="dob" class="col-sm-2 col-form-label">Date of Birth</label>
+                <label for="dob" class="col-sm-2 col-form-label">Date of Birth*</label>
                 <div class="col-sm-10">
-                    <input placeholder="Date of Birth" type="date" class="form-control" id="dob" ngNativeValidate
-                        [(ngModel)]="grad.dob" name="dob" [readonly]="!adminRole&&!gradRole"/>
+                    <input placeholder="Date of Birth" type="date" class="form-control" id="dob" [(ngModel)]="grad.dob"
+                        name="dob" [readonly]="!adminRole&&!gradRole" required />
                 </div>
             </div>
             <!-- Native Place  -->
@@ -130,24 +134,26 @@
                 <label for="nativepPlace" class="col-sm-2 col-form-label">Native Place</label>
                 <div class="col-sm-10">
                     <input placeholder="Native Place" type="text" class="form-control" id="nativePlace"
-                        [(ngModel)]="grad.nativePlace" name="nativePlace" [readonly]="!adminRole&&!gradRole"/>
+                        [(ngModel)]="grad.nativePlace" name="nativePlace" [readonly]="!adminRole&&!gradRole" />
                 </div>
             </div>
 
             <!-- Current Place  -->
             <div class="form-group row">
-                <label for="currentPlace" class="col-sm-2 col-form-label">Current Place</label>
+                <label for="currentPlace" class="col-sm-2 col-form-label">Current Place*</label>
                 <div class="col-sm-10">
                     <input placeholder="Current Place" type="text" class="form-control" id="currentPlace"
-                        ngNativeValidate [(ngModel)]="grad.currentPlace" name="currentPlace" [readonly]="!adminRole&&!gradRole"/>
+                        [(ngModel)]="grad.currentPlace" name="currentPlace" [readonly]="!adminRole&&!gradRole"
+                        required />
                 </div>
             </div>
             <!-- Parent's Contact Number -->
             <div class="form-group row">
                 <label for="parentContact" class="col-sm-2 col-form-label">Parent's Contact Number</label>
                 <div class="col-sm-10">
-                    <input placeholder="Parent's Contact Number" type="number" class="form-control" id="parentContact"
-                        ngModel="grad.parentContact" name="parentContact" [readonly]="!adminRole&&!gradRole"/>
+                    <input placeholder="Parent's Contact Number" type="tel" pattern="[0-9]{10}" minlength="10"
+                        maxlength="10" class="form-control" id="parentContact" ngModel="grad.parentContact"
+                        name="parentContact" [readonly]="!adminRole&&!gradRole" />
                 </div>
             </div>
             <!-- Parent's Postal Address -->
@@ -159,12 +165,17 @@
                 </div>
             </div>
 
+            <!-- CV-Link -->
             <div class="form-group row">
-                <label for="cvLink" class="col-sm-2 col-form-label">CV Link</label>
+                <label for="cvLink" class="col-sm-2 col-form-label">CV Link*</label>
                 <div class="col-sm-10">
-                    <input placeholder="CV Link" type="text" class="form-control" id="cvLink" ngNativeValidate
-                        [(ngModel)]="grad.cvLink" name="cvLink" [readonly]="!adminRole&&!gradRole" />
+                    <input placeholder="CV Link" type="text" class="form-control" id="cvLink" [(ngModel)]="grad.cvLink"
+                        name="cvLink" [readonly]="!adminRole&&!gradRole" required />
                 </div>
+            </div>
+
+            <div class="alert alert-primary" role="alert">
+                Fields marked with * are compulsory
             </div>
 
             <div class="form-group row">

@@ -10,8 +10,8 @@ import { ParamMap, ActivatedRoute, Router } from '@angular/router';
 })
 export class AddEditComponent implements OnInit {
   private loggedInStatus = JSON.parse(sessionStorage.getItem('loggedIn') || 'false');
-  gradRole = true;
-  adminRole = false;
+  gradRole = false;
+  adminRole = true;
   trainerRole = false;
 
   grad: Grad;

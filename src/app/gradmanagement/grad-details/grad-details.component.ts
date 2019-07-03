@@ -22,10 +22,10 @@ export class GradDetailsComponent implements OnInit {
       {
         this.gradId=parseInt(params.get('id'));
         this.gradService.getGrad(this.gradId).subscribe(data => this.graduate = data);
-
+     
         if(this.graduate!=null)
           this.isLoaded=true;
-        });   
+      });   
     }
 
     updateGrad(){
