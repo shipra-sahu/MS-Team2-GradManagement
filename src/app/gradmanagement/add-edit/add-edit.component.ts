@@ -9,41 +9,53 @@ import { ParamMap, ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./add-edit.component.css']
 })
 export class AddEditComponent implements OnInit {
+  private loggedInStatus = JSON.parse(sessionStorage.getItem('loggedIn') || 'false');
+  gradRole = true;
+  adminRole = false;
+  trainerRole = false;
 
-  grad: Grad ;
+  grad: Grad;
   gradId: number;
   submitted = false;
 
-  constructor(private gradService: GradService, private route:ActivatedRoute, private router:Router) {
+  constructor(private gradService: GradService, private route: ActivatedRoute, private router: Router) {
     this.grad = new Grad();
-   }
+  }
 
   ngOnInit() {
-    this.route.paramMap.subscribe((params: ParamMap)=>
-      {
-        this.gradId=parseInt(params.get('id'));
+    //checking the role of the user i.e.either grad or admin or trainer
+    const role = this.loggedInStatus.role;
+    if (role == "grad")
+      this.gradRole = true;
+    else if (role == "admin")
+      this.adminRole = true;
+    else
+      this.trainerRole = true;
+
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.gradId = parseInt(params.get('id'));
     });
     this.route.queryParams.subscribe(params => {
       this.grad = JSON.parse(params.grad);
     });
-}
-
-  newGrad(): void {
-    this.submitted = false;
-    this.grad = new Grad();
   }
 
+  // newGrad(): void {
+  //   this.submitted = false;
+  //   this.grad = new Grad();
+  // }
+
   save() {
-    if(this.gradId){
+    if (this.gradId) {
       this.gradService.updateGrad(this.gradId, this.grad)
         .subscribe(data => this.grad = data, error => console.log(error));
     }
-    else{
+    else {
       this.gradService.createGrad(this.grad)
         .subscribe(data => this.grad = data, error => console.log(error));
     }
     this.router.navigate(["/grads", this.grad.id])
-    this.grad = new Grad();
+    //this.grad = new Grad();
   }
 
   onSubmit() {

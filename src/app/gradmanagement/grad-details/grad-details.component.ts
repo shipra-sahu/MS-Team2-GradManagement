@@ -39,3 +39,4 @@ export class GradDetailsComponent implements OnInit {
       this.router.navigate(["/grads/fill", this.gradId], navigationExtras);
     }
   }
+  

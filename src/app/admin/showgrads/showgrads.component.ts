@@ -13,7 +13,9 @@ import {Sort} from '@angular/material/sort';
 })
 export class ShowgradsComponent implements OnInit {
 
-  constructor(private gradService: GradService,public dialog: MatDialog) { }
+  constructor(private gradService: GradService,public dialog: MatDialog,) { 
+    
+  }
 
   // columnDefs = [
   //   {headerName: "Employee Code", field: "employeeCode", sortable:true, filter:true},

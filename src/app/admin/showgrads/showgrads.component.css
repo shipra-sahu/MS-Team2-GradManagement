@@ -3,7 +3,7 @@ body{
     font-family: 'Times New Roman', Times, serif;
     /* overflow: scroll; */
 }
-.tableFixHead          { overflow-y: auto; height: 450px; }
+.tableFixHead          { overflow-y: auto; height: 500px; }
 .tableFixHead thead th { position: sticky; top: 0; }
 
 table  { border-collapse: collapse; width: 100%; }
